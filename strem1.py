@@ -86,11 +86,11 @@ FiberContent= st.number_input("FiberContent",min_value=0.00,max_value=40.00)
 SugarContent= st.number_input("SugarContent",min_value=0.00,max_value=40.00) 
 ProteinContent= st.number_input("ProteinContent",min_value=0.00,max_value=200.00) 
 
-df=[Calories,FatContent,SaturatedFatContent,CholesterolContent,SodiumContent,CarbohydrateContent,FiberContent,SugarContent,ProteinContent,columns=['Calories','FatContent','SaturatedFatContent','CholesterolContent','SodiumContent','CarbohydrateContent','FiberContent','SugarContent','ProteinContent']]
+df=[Calories,FatContent,SaturatedFatContent,CholesterolContent,SodiumContent,CarbohydrateContent,FiberContent,SugarContent,ProteinContent]
 
 df=np.array(df).reshape(-1, 1)
 df=df.reshape(1,9)
-print(df)
+st.text(df)
 
 
 neigh = pickle.load(open('neigh.pkl', 'rb'))
