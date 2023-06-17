@@ -45,7 +45,16 @@ elif BMI <30 and BMI >=25:
 else :
     st.text('obesity')
 
-
+max_Calories=2000
+max_daily_fat=100
+max_daily_Saturatedfat=13
+max_daily_Cholesterol=300
+max_daily_Sodium=2300
+max_daily_Carbohydrate=325
+max_daily_Fiber=40
+max_daily_Sugar=40
+max_daily_Protein=200
+max_list=[max_Calories,max_daily_fat,max_daily_Saturatedfat,max_daily_Cholesterol,max_daily_Sodium,max_daily_Carbohydrate,max_daily_Fiber,max_daily_Sugar,max_daily_Protein]
 ### BMR (kcal/day)
 
 if sex == 1:
@@ -141,7 +150,7 @@ def apply_pipeline(pipeline,_input,extracted_data):
 
 
 if st.button('Suggest for lunch'):
-    recommand(dataset,df,Calories)
+    recommand(dataset,df,max_list)
    
 
 #'''
