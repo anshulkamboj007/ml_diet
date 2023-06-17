@@ -61,7 +61,7 @@ number_of_meals=st.slider('Meals per day',min_value=3,max_value=5,step=1,value=3
 if number_of_meals==3:
     meals_calories_perc={'breakfast':0.35,'lunch':0.40,'dinner':0.25}
     st.text('breakfast:{},lunch:{},dinner:{}'.format(0.35*BMR,0.4*BMR,0.25*BMR))
-    #for lunch only
+    
     Calories=0.4*BMR
 elif number_of_meals==4:
     meals_calories_perc={'breakfast':0.30,'morning snack':0.05,'lunch':0.40,'dinner':0.25}
@@ -74,21 +74,23 @@ else:
     #for lunch only
     Calories=0.40*BMR
 
+st.text('for lunch only')
+st.text(Calories)
 
 
 
-FatContent = st.number_input("fat content",min_value=0.00,max_value=100.00)
-SaturatedFatContent = st.number_input("SaturatedFatContent",min_value=0.00,max_value=13.00)
-CholesterolContent = st.number_input("CholesterolContent",min_value=0.00,max_value=300.00) 
-SodiumContent= st.number_input("SodiumConten",min_value=0.00,max_value=2300.00) 
-CarbohydrateContent= st.number_input("CarbohydrateContent",min_value=0.00,max_value=325.00) 
-FiberContent= st.number_input("FiberContent",min_value=0.00,max_value=40.00) 
-SugarContent= st.number_input("SugarContent",min_value=0.00,max_value=40.00) 
-ProteinContent= st.number_input("ProteinContent",min_value=0.00,max_value=200.00) 
+FatContent = st.number_input("fat content",min_value=0,max_value=100,step=1)
+SaturatedFatContent = st.number_input("SaturatedFatContent",min_value=0,max_value=13,step=1)
+CholesterolContent = st.number_input("CholesterolContent",min_value=0,max_value=300,step=1) 
+SodiumContent= st.number_input("SodiumConten",min_value=0,max_value=2300,step=1) 
+CarbohydrateContent= st.number_input("CarbohydrateContent",min_value=0,max_value=325,step=1) 
+FiberContent= st.number_input("FiberContent",min_value=0,max_value=40,step=1) 
+SugarContent= st.number_input("SugarContent",min_value=0,max_value=40,step=1) 
+ProteinContent= st.number_input("ProteinContent",min_value=0,max_value=200,step=1) 
 
 df=[Calories,FatContent,SaturatedFatContent,CholesterolContent,SodiumContent,CarbohydrateContent,FiberContent,SugarContent,ProteinContent]
 
-df=np.array(df).reshape(-1, 1)
+df=np.array(df,dtype='int').reshape(-1, 1)
 df=df.reshape(1,9)
 st.text(df)
 
